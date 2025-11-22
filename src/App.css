@@ -1,0 +1,53 @@
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #5f5f5f;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #363636;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #18181a;
+}
+
+::selection {
+  color: #0f0f0f;
+  background-color: #ffffff;
+}
+
+/* Shimmer Effect Classes */
+
+/* Reusable shimmer text utility
+   - Uses CSS variables so colors and duration can be set from React via inline styles.
+   - --shimmer-colors: comma-separated color stops for the gradient (e.g. "#fff, #5E5E5E, #fff")
+   - --shimmer-duration: animation length (e.g. "5s")
+*/
+.shimmer-text {
+  display: inline-block;
+  background: linear-gradient(
+    var(--shimmer-direction, 135deg),
+    var(--shimmer-colors, #ffffff, #5e5e5e, #ffffff)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  /* Fallback color if background-clip is not supported */
+  background-color: var(--shimmer-fallback, transparent);
+  background-size: 200% 100%;
+  animation: shimmer var(--shimmer-duration, 5s) linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
