@@ -5,9 +5,11 @@ import Loader from "../pages/Page-Loaders/Loader-1";
 
 export default function MainRoutes() {
   return (
-    <Route element={<MainLayout />}>
-      <Route path="/" element={<Home />} />
+    <>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+      </Route>
       <Route path="/Loader-1" element={<Loader />} />
-    </Route>
+    </>
   );
 }
