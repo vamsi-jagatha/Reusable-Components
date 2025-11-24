@@ -61,7 +61,7 @@ const Loader = ({
         {Array.from({ length: count }).map((_, i) => (
           <div
             key={i}
-            className="box flex-1"
+            className="box flex-1 z-50"
             style={{ backgroundColor: resolveColor(i) }}
           ></div>
         ))}
