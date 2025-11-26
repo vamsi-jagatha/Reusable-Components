@@ -1,16 +1,41 @@
-# React + Vite
+# Reusable Components
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A collection of flexible, customizable, and production-ready reusable components for React applications. This library is built to save development time and promote consistency across your projects by providing well-tested UI and logic building blocks.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🏗 **Highly Customizable**: Designed for maximum flexibility with easily overridable styles and adaptable props.
+- 🔋 **Production-Ready**: Optimized for real-world usage with accessibility and performance in mind.
+- ♻️ **Composable**: Easy to mix, match, and compose components to fit your UI needs.
+- 🧩 **Modern React Patterns**: Built using hooks and functional components.
+- 🌎 **Open Source & Extensible**: Contributions encouraged!
 
-## React Compiler
+## Usage
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Directly import components from the library or Simply Copy and Paste into your React app
 
-## Expanding the ESLint configuration
+## Available Components
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Button**: Primary, secondary, link, icon buttons
+- **Modal/Drawer/Dialog**: Overlay components for dialogs and side-panels
+- **Input**: Text, password, textarea, search
+- **Checkbox & Radio**
+- **Dropdown & Select**
+- **Tabs**
+- **Tooltip**
+- **Spinner & Loader**
+- **Card**
+- **Alert/Notification**
+- **...and more**
+
+## Customization
+
+All components offer props for tweaking styling and behavior. For more advanced customization, use the `className` or `style` props or wrap with your own components.
+
+## License
+
+MIT © [@vamsi-jagatha](https://github.com/vamsi-jagatha)
+
+---
+
+Built with ❤️ for the React Reusable Components with seemless integration.
