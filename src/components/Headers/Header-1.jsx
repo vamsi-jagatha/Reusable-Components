@@ -79,7 +79,7 @@ const Header = ({
         <div
           className={`w-full py-2 px-6 text-white flex justify-between items-center ${containerClass}`}
         >
-          {logo && <img src={logo} alt="Logo" className="h-14" />}
+          {logo && <img src={logo} alt="Logo" className="h-10" />}
 
           <nav>
             <ul className="flex space-x-4">
