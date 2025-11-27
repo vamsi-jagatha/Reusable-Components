@@ -4,6 +4,7 @@ import GradientText from "../components/GradientText/GradientText1";
 import GradientBg from "../components/Backgrounds/GradientBg-1";
 import ShimmerText from "../components/ShimmerEffect/ShimmerText1";
 import HomeSvg from "../../public/svgs/home.svg";
+import CardsMatrix from "../components/cards/Cards-1";
 
 const Home = () => {
   return (
@@ -44,7 +45,11 @@ const Home = () => {
           </div>
         </div>
         {/* Right Section */}
-        <div className="flex-1"></div>
+        <div className="flex-1">
+          <div className="flex-1 flex items-center justify-center">
+            <CardsMatrix />
+          </div>
+        </div>
       </section>
     </>
   );
