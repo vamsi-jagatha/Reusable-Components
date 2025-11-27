@@ -1,19 +1,24 @@
 import Button from "../components/Buttons/Button1";
 import Line from "../components/DecorativeLines/Line1";
 import GradientText from "../components/GradientText/GradientText1";
+import GradientBg from "../components/Backgrounds/GradientBg-1";
 import ShimmerText from "../components/ShimmerEffect/ShimmerText1";
+import HomeSvg from "../../public/svgs/home.svg";
 
 const Home = () => {
   return (
     <>
-      <section className="min-h-screen flex flex-col md:flex-row items-center justify-center text-center px-6 ">
+      <section className="min-h-screen flex flex-col  md:flex-row items-center justify-center text-center px-6 ">
+        <GradientBg
+          colors={["#ff00e6", "#0055ff", "#00f0ff"]}
+          position="-top-[30%] -right-[10%]"
+        />
+
         {/* Left Section */}
         <div className="flex-1 flex flex-col items-center  justify-center">
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-6xl font-ragnear font-extrabold uppercase leading-tight max-w-5xl">
             Your Central Hub for
-            {/* <GradientText className="block">
-            </GradientText> */}
             <ShimmerText
               gradient={true}
               duration={5}
