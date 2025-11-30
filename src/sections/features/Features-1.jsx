@@ -2,7 +2,7 @@ import Card from "../../components/cards/Cards-2";
 
 const Features = () => {
   return (
-    <section className="w-full py-16 px-6 text-primary-white">
+    <section className="w-full py-16  text-primary-white">
       <div className="space-y-10">
         {/* Heading */}
         <header className="space-y-4">
