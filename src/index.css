@@ -19,10 +19,41 @@
   --color-primary-gray: #252527; /* Gray */
   --color-secondary-gray: #363636; /* Gray */
   --color-tertiary-gray: #5f5f5f; /* Gray */
+  --color-gray-1000: #0f0f10; /* Deep charcoal – almost black */
+  --color-gray-950: #181819; /* Dark charcoal */
+  --color-gray-900: #202022; /* Neutral dark gray */
+  --color-gray-850: #2b2b2d; /* Darker than your primary */
+  --color-gray-800: #3d3d3f; /* Slightly lighter neutral */
+  --color-gray-750: #4a4a4c; /* Between secondary & tertiary */
+  --color-gray-700: #6b6b6d; /* Soft mid-gray */
+  --color-gray-650: #7a7a7c; /* Lighter mid-gray */
+  --color-gray-600: #8a8a8c; /* Gentle light gray */
+  --color-gray-550: #9b9b9d; /* Softened light */
+  --color-gray-500: #ababac; /* Balanced light gray */
+  --color-gray-450: #bebebe; /* Very light neutral */
+  --color-gray-400: #d1d1d1; /* Subtle pale gray */
+  --color-gray-350: #e3e3e3; /* Bright, but not white */
+  --color-gray-300: #f1f1f1; /* Soft off-white */
+
   --color-primary-white: #fff; /* White */
   --color-secondary-white: #f5f5f5; /* White */
   --color-primary-blue: #155dfc; /* Blue */
   --color-secondary-blue: #1447e6; /* Blue */
+  --color-blue-1000: #0a1a4b; /* Deep navy */
+  --color-blue-950: #0c2666; /* Dense dark blue */
+  --color-blue-900: #0f3380; /* Midnight blue */
+  --color-blue-850: #123e9b; /* Crisp darker royal blue */
+  --color-blue-800: #1447e6; /* Your secondary blue */
+  --color-blue-750: #1552f0; /* Transition shade */
+  --color-blue-700: #155dfc; /* Your primary blue */
+  --color-blue-650: #2a6aff; /* Slightly lighter vibrant blue */
+  --color-blue-600: #3d78ff; /* Soft clear blue */
+  --color-blue-550: #5187ff; /* Gentle bright blue */
+  --color-blue-500: #6b99ff; /* Medium pastel blue */
+  --color-blue-450: #85acff; /* Smooth light blue */
+  --color-blue-400: #a0c0ff; /* Pale sky blue */
+  --color-blue-350: #bed4ff; /* Very light cool blue */
+  --color-blue-300: #dbe8ff; /* Soft icy blue */
 }
 
 /* Custom Animation */
