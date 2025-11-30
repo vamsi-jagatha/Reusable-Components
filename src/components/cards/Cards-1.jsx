@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 
 const CardsMatrix = ({
@@ -14,25 +14,22 @@ const CardsMatrix = ({
     { name: "Modals" },
   ],
 
-  scrollDuration = 8, // gsap scrolling speed
-  copies = 4, // repeated grid copies
+  scrollDuration = 8,
+  copies = 4,
   containerGradient = "bg-linear-to-br from-blue-500 via-blue-600 to-red-500",
   shadowClass = "shadow-2xl shadow-blue-500",
-  cardClass = "", // custom card style override
+  cardClass = "",
 }) => {
   const scrollRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
 
-    let tween;
-    const id = requestAnimationFrame(() => {
+    let ctx = gsap.context(() => {
       const singleHeight = el.scrollHeight / copies;
 
-      el.style.transform = `translateY(0px)`;
-
-      tween = gsap.to(el, {
+      gsap.to(el, {
         y: -singleHeight,
         duration: scrollDuration,
         ease: "none",
@@ -40,28 +37,33 @@ const CardsMatrix = ({
         modifiers: {
           y: (value) => {
             const v = parseFloat(value);
-            const wrapped = gsap.utils.wrap(-singleHeight, 0)(v);
-            return wrapped + "px";
+            return gsap.utils.wrap(-singleHeight, 0)(v) + "px";
           },
         },
       });
     });
 
-    return () => {
-      cancelAnimationFrame(id);
-      if (tween) tween.kill();
-    };
+    return () => ctx.revert();
   }, [copies, scrollDuration]);
 
   return (
     <div
       className={`overflow-hidden rounded-3xl ${containerGradient} ${shadowClass}`}
     >
-      <div className="flex h-[350px] w-full rotate-30 items-center justify-center px-4">
-        <div ref={scrollRef} style={{ willChange: "transform" }}>
-          {Array.from({ length: copies }).map((_, i) => (
-            <Grid key={i} items={items} cardClass={cardClass} />
-          ))}
+      <div className="flex h-[350px] w-full items-center justify-center px-4">
+        {/* Rotation wrapper only */}
+        <div className="rotate-30">
+          {/* Non-rotated stable parent for GSAP */}
+          <div className="overflow-hidden">
+            <div
+              ref={scrollRef}
+              style={{ transform: "translateZ(0)", willChange: "transform" }}
+            >
+              {Array.from({ length: copies }).map((_, i) => (
+                <Grid key={i} items={items} cardClass={cardClass} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -80,8 +82,7 @@ const Card = ({ title, cardClass }) => (
   <div
     className={`
       p-6 rounded-2xl 
-      border shadow-lg  
-      backdrop-blur-xl 
+      border  
       transition transform 
       hover:-translate-y-2 
       cursor-pointer

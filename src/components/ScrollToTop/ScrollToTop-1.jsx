@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
+
 const ScrollToTop = () => {
   const [visible, setVisible] = useState(false);
 
-  // Show button when user scrolls down 300px
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
+      setVisible(window.scrollY > 300);
     };
 
     window.addEventListener("scroll", toggleVisibility);
@@ -18,9 +18,10 @@ const ScrollToTop = () => {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+    gsap.to(window, {
+      duration: 1.2,
+      scrollTo: { y: 0, autoKill: true },
+      ease: "power3.out",
     });
   };
 
@@ -34,7 +35,7 @@ const ScrollToTop = () => {
         bg-blue-600 hover:bg-blue-700
         text-white p-3 rounded-full shadow-lg
         transition-all duration-300
-        flex items-center justify-center animate-bounce
+        flex items-center cursor-pointer justify-center animate-bounce
       "
     >
       <ArrowUp className="w-5 h-5" />
