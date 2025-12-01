@@ -98,3 +98,11 @@
     }
   }
 }
+
+/* Card-4 */
+/* Required for animating CSS custom properties */
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
