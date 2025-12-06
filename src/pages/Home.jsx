@@ -5,7 +5,20 @@ import About from "../sections/about/About-1";
 const Home = () => {
   return (
     <>
-      <Header />
+      <Header
+        className=""
+        fixed={true}
+        itemColor="text-white"
+        logoColor="text-blue-500"
+        logoHoverColor="hover:text-blue-700"
+        logoSize="w-10 h-10"
+        animateLogo={true}
+        menuItems={[
+          { label: "Home", href: "#home" },
+          { label: "Docs", href: "#docs" },
+          { label: "Components", href: "#components" },
+        ]}
+      />
       <div className="max-w-[1440px] mx-auto px-6">
         <Landing />
         <About />

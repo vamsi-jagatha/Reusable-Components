@@ -3,7 +3,7 @@ import React from "react";
 const Beam = ({ className = "" }) => {
   return (
     <div
-      className={`pointer-events-none absolute inset-0 flex justify-center items-start ${className}`}
+      className={`pointer-events-none absolute inset-0 z-0 flex justify-center items-start ${className}`}
     >
       {/* Outer Soft Column Glow */}
       <div
