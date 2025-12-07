@@ -7,10 +7,10 @@ import ScrollMouse from "../../components/scrollMouse/ScrollMouse-1";
 const Landing = () => {
   return (
     <>
-      <section className="h-full lg:min-h-screen flex flex-col md:flex-row items-center justify-center text-center">
+      <section className=" overflow-hidden h-full lg:min-h-screen flex flex-col md:flex-row items-center justify-center text-center">
         <GradientBg
           colors={["#ff00e6", "#0055ff", "#00f0ff"]}
-          position="-top-[30%] -right-[10%]"
+          position="-top-[30%] right-[0%] md:-right-[10%]"
         />
 
         {/* Left Section (Text) */}

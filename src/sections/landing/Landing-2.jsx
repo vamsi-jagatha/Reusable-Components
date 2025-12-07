@@ -2,7 +2,7 @@ import React from "react";
 import Beam from "../../components/sunlight/Beam-1";
 import Button from "../../components/Buttons/Button-3";
 import { ArrowRight } from "lucide-react";
-import Header from "../../components/headers/Header-2";
+import Header from "../../components/Headers/Header-2";
 // import CounterItem from "../../components/counters/CounterItems-2";
 import CounterSection from "../../components/counters/CounterSection-1";
 
@@ -16,6 +16,7 @@ const Landing = () => {
         logoColor="text-purple-500"
         logoHoverColor="hover:text-purple-700"
         logoSize="w-10 h-10"
+        hoverTextColor="hover:text-purple-700"
         animateLogo={true}
         menuItems={[
           { label: "Home", href: "#home" },
@@ -26,7 +27,7 @@ const Landing = () => {
 
       <Beam className="opacity-70" />
       <div>
-        <h1 className="text-5xl md:text-6xl max-w-6xl  pt-40 font-ragnear font-bold">
+        <h1 className="text-5xl md:text-6xl max-w-6xl  pt-54 font-ragnear font-bold">
           Deploy anything, anywhere
           <div className=" inline-block">—with zero-friction.</div>
         </h1>
@@ -49,13 +50,15 @@ const Landing = () => {
           {
             label: "Tasks Completed",
             value: 6383,
-            fontSize: 30,
+            fontSize: 25,
+            width: 12,
             duration: 2000,
             plus: true,
           },
           {
             label: "Active Users",
-            fontSize: 30,
+            fontSize: 25,
+            width: 12,
             value: 12450,
             plus: true,
             duration: 2000,
@@ -64,21 +67,24 @@ const Landing = () => {
             plus: true,
             label: "Projects",
             value: 289,
-            fontSize: 30,
+            width: 12,
+            fontSize: 25,
             duration: 2000,
           },
           {
             label: "Deployments",
             plus: true,
-            fontSize: 30,
+            fontSize: 25,
+            width: 12,
             value: 762,
             duration: 2000,
           },
           {
             label: "Uptime (%)",
-            value: 999,
-            plus: true,
-            fontSize: 30,
+            value: 99,
+            plus: false,
+            fontSize: 25,
+            width: 12,
             duration: 2000,
           },
         ]}

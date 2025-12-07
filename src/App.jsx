@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes } from "react-router-dom";
 import MainRoutes from "./routes/MainRoutes";
+import TestingRoutes from "./routes/TestingRoutes";
 import "./App.css";
 
 import React from "react";
@@ -12,6 +13,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>{MainRoutes()}</Routes>
+      <Routes>{TestingRoutes()}</Routes>
     </BrowserRouter>
   );
 }

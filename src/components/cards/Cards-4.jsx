@@ -62,9 +62,7 @@ const BeamCard = ({
         if (pauseOnHover) e.currentTarget.style.animationPlayState = "running";
       }}
     >
-      <div
-        className={`${radiusClass} bg-neutral-900 border border-white/10 p-6`}
-      >
+      <div className={`${radiusClass} bg-neutral-900 border border-white/10 `}>
         {children}
       </div>
 

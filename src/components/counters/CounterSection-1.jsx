@@ -1,18 +1,27 @@
 import React from "react";
 import CounterItem from "./Counteritems-2";
+import Cards from "../cards/Cards-4";
 
 const CounterSection = ({ items = [] }) => {
   return (
-    <section className="w-full flex justify-center pt-32 pb-12 px-4">
+    <Cards
+      borderRadius="2xl"
+      borderWidth={3}
+      speed="8s"
+      colors={["#9C2CE9"]}
+      pauseOnHover={false}
+      borderLength={10} // % of visible border
+      rotation="counterClockwise"
+      className=" mt-20  md:w-7xl md:mt-32 mmd:pt-32   pt-32 pb-12 px-4"
+    >
       <div
         className="
           w-full max-w-7xl
           py-4 px-6
           rounded-2xl
-          bg-gradient-to-b from-[#4d5f25]/40 to-[#0b0d06]/90
+    bg-purple-800/20
           backdrop-blur-xl
-          border border-[#57702e]/30
-          shadow-[0_0_40px_rgba(100,255,100,0.15)]
+          border border-purple-700/30
         "
       >
         {/* GRID SYSTEM */}
@@ -53,7 +62,7 @@ const CounterSection = ({ items = [] }) => {
                     hidden lg:block
                     absolute right-0 top-0 bottom-0 
                     w-px 
-                    bg-gradient-to-b from-transparent via-green-600/30 to-transparent
+                    bg-linear-to-b from-transparent via-purple-600/30 to-transparent
                   "
                 />
               )}
@@ -61,7 +70,7 @@ const CounterSection = ({ items = [] }) => {
           ))}
         </div>
       </div>
-    </section>
+    </Cards>
   );
 };
 
