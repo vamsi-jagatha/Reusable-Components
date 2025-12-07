@@ -1,27 +1,46 @@
-import React from "react";
-
 const ScrollMouse = ({
-  size = "h-9 w-5",
-  wheelSize = "h-2 w-1",
-  className = "bottom-10",
+  sizeMobile = "h-8 w-2",
+  sizeDesktop = "h-11 w-5",
+  wheelMobile = "h-1.5 w-1",
+  wheelDesktop = "h-3 w-1.5",
   borderColor = "border-white",
   wheelColor = "bg-white",
-  text = "", // Custom text
-  textColor = "text-white", // Text color
-  textClassName = "mt-2 text-sm", // Tailwind classes for text styling
+  text = "",
+  textColor = "text-white",
+  textClassName = "mt-3 text-xs md:text-sm font-medium",
+  className = "",
 }) => {
   return (
-    <div className={`w-full absolute ${className} flex flex-col items-center`}>
+    <div
+      className={`
+        relative 
+        flex flex-col items-center
+        ${className}
+
+        md:absolute md:bottom-12
+        md:left-1/2 md:-translate-x-1/2
+      `}
+    >
       <div
-        className={`mouse-scroll border-2 ${borderColor} rounded-full ${size} flex justify-center animate-bounce`}
+        className={`
+          border-2 ${borderColor}
+          rounded-full
+          flex justify-center
+          animate-bounce
+          ${sizeMobile} md:${sizeDesktop}
+        `}
       >
         <div
-          className={`wheel ${wheelColor} ${wheelSize} rounded-full mt-2`}
+          className={`
+            ${wheelColor} rounded-full
+            mt-1.5 md:mt-2
+            ${wheelMobile} md:${wheelDesktop}
+          `}
         ></div>
       </div>
+
       {text && <span className={`${textColor} ${textClassName}`}>{text}</span>}
     </div>
   );
 };
-
 export default ScrollMouse;
