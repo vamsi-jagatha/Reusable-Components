@@ -14,10 +14,10 @@ const About = () => {
           </header>
 
           {/* Center Large Text */}
-          <div className="text-center">
-            <p className="text-2xl md:text-4xl text-gray-300 max-w-6xl mx-auto leading-relaxed">
+          <div className=" ">
+            <p className="text-2xl inline-block md:text-4xl text-gray-300 max-w-6xl mx-auto leading-[1.55] text-justify">
               Build once. Reuse everywhere. Empower your development workflow
-              with beautifully designed, fully customizable UI components that
+              with beautifully designed, fully customizable UI components - that
               help you move faster without sacrificing quality. Each component
               is crafted to be flexible, intuitive, and scalable — giving you
               the freedom to create consistent, modern interfaces across every

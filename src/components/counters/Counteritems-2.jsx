@@ -4,12 +4,11 @@ import { gsap } from "gsap";
 const CounterItem = ({
   label,
   value,
-
   digitColor = "white",
   fontSize = 40,
-  width = 15,
+  width = 12,
   plus = true,
-  animationDelay = 0, // ⬅ NEW PROP
+  animationDelay = 0,
 }) => {
   const wrapperRef = useRef([]);
 
@@ -25,24 +24,24 @@ const CounterItem = ({
 
       const numberList = el.querySelector(".numbers");
       const direction = index % 2 === 0 ? "up" : "down";
+      const targetIndex = Number(digit);
 
-      // Reset before animation
       gsap.set(numberList, { y: 0 });
 
       if (direction === "up") {
         gsap.to(numberList, {
-          y: -digit * DIGIT_HEIGHT,
+          y: -(targetIndex * DIGIT_HEIGHT),
           duration: 1.6,
-          delay: animationDelay, // ⬅ APPLY DELAY HERE
+          delay: animationDelay,
           ease: "power4.out",
         });
       } else {
         gsap.set(numberList, { y: -(9 * DIGIT_HEIGHT) });
 
         gsap.to(numberList, {
-          y: -(digit * DIGIT_HEIGHT),
+          y: -(targetIndex * DIGIT_HEIGHT),
           duration: 1.6,
-          delay: animationDelay, // ⬅ APPLY DELAY HERE
+          delay: animationDelay,
           ease: "power4.out",
         });
       }
@@ -52,9 +51,12 @@ const CounterItem = ({
   return (
     <div className="flex flex-col items-center">
       <div
-        className={`flex gap-1 font-bold ${isTailwind ? digitColor : ""}`}
+        className={`flex gap-1 font-bold items-center ${
+          isTailwind ? digitColor : ""
+        }`}
         style={!isTailwind ? { color: digitColor } : {}}
       >
+        {/* DIGIT WHEELS */}
         {String(value)
           .split("")
           .map((digitChar, index) => (
@@ -66,7 +68,7 @@ const CounterItem = ({
             >
               <div
                 className="numbers absolute top-0 left-0"
-                style={{ height: `${48 * 10}px` }}
+                style={{ height: `${48 * 10}px` }} // Only 0–9
               >
                 {Array.from({ length: 10 }).map((_, i) => (
                   <div
@@ -86,31 +88,28 @@ const CounterItem = ({
                     {i}
                   </div>
                 ))}
-
-                {/* PLUS SIGN BLOCK */}
-                {plus && (
-                  <div
-                    className={isTailwind ? digitColor : ""}
-                    style={{
-                      height: "48px",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      fontSize: `${fontSize}px`,
-                      lineHeight: "48px",
-                      width: `${width}px`,
-                      ...(isTailwind ? {} : { color: digitColor }),
-                    }}
-                  >
-                    +
-                  </div>
-                )}
               </div>
             </div>
           ))}
+
+        {/* STATIC PLUS SIGN */}
+        {plus && (
+          <span
+            className={isTailwind ? digitColor : ""}
+            style={{
+              fontSize: `${fontSize}px`,
+              marginTop: "-4px",
+              lineHeight: "48px",
+              fontWeight: "bold",
+              ...(isTailwind ? {} : { color: digitColor }),
+            }}
+          >
+            +
+          </span>
+        )}
       </div>
 
-      <span className="text-gray-700 text-md mt-2">{label}</span>
+      <span className="text-gray-700 text-md mt-0">{label}</span>
     </div>
   );
 };
