@@ -9,7 +9,7 @@ const Home = () => {
         className=""
         fixed={true}
         itemColor="text-white"
-        logoColor="text-blue-500"
+        logoColor="text-blue-800"
         logoHoverColor="hover:text-blue-700"
         logoSize="w-10 h-10"
         animateLogo={true}
