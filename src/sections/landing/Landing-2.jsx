@@ -3,7 +3,6 @@ import Beam from "../../components/sunlight/Beam-1";
 import Button from "../../components/Buttons/Button-3";
 import { ArrowRight } from "lucide-react";
 import Header from "../../components/Headers/Header-2";
-// import CounterItem from "../../components/counters/CounterItems-2";
 import CounterSection from "../../components/counters/CounterSection-1";
 
 const Landing = () => {
