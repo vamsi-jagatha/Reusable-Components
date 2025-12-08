@@ -83,7 +83,7 @@ const Card = ({ title, cardClass }) => (
     className={`
       p-6 rounded-2xl 
       border  
-      transition transform 
+      transition transform
       hover:-translate-y-2 
       cursor-pointer
       bg-white/40 border-black/10 text-black
@@ -91,7 +91,7 @@ const Card = ({ title, cardClass }) => (
       ${cardClass}
     `}
   >
-    <p className="font-semibold text-sm md:text-base">{title}</p>
+    <p className="font-semibold text-sm md:text-base truncate">{title}</p>
   </div>
 );
 
