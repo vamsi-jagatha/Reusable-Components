@@ -7,7 +7,7 @@ import CounterSection from "../../components/counters/CounterSection-1";
 
 const Landing = () => {
   return (
-    <div className="min-h-screen relative overflow-hidden px-4 flex flex-col items-center text-center">
+    <div className="min-h-screen relative overflow-hidden px-4 py-6 flex flex-col items-center text-center">
       <Header
         className=""
         fixed={true}
@@ -26,7 +26,7 @@ const Landing = () => {
 
       <Beam className="opacity-70" />
       <div>
-        <h1 className="text-5xl md:text-6xl max-w-6xl  pt-54 font-ragnear font-bold">
+        <h1 className="text-5xl md:text-6xl max-w-6xl  pt-42 font-ragnear font-bold">
           Deploy anything, anywhere
           <div className=" inline-block">—with zero-friction.</div>
         </h1>
