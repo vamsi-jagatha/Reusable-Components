@@ -12,8 +12,10 @@ gsap.registerPlugin(ScrollTrigger);
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>{MainRoutes()}</Routes>
-      <Routes>{TestingRoutes()}</Routes>
+      <Routes>
+        {MainRoutes()}
+        {TestingRoutes()}
+      </Routes>
     </BrowserRouter>
   );
 }
