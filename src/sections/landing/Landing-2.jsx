@@ -7,7 +7,7 @@ import CounterSection from "../../components/counters/CounterSection-1";
 
 const Landing = () => {
   return (
-    <div className="min-h-screen relative overflow-hidden px-4 py-6 flex flex-col items-center text-center">
+    <section className="min-h-screen relative overflow-hidden px-4 py-6 flex flex-col items-center text-center">
       <Header
         className=""
         fixed={true}
@@ -88,7 +88,7 @@ const Landing = () => {
           },
         ]}
       />
-    </div>
+    </section>
   );
 };
 
