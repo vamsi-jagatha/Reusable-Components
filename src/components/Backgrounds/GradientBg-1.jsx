@@ -6,6 +6,7 @@ const GradientBg = ({
   blur = "blur-3xl",
   colors = ["#3b82f6", "#1d4ed8"],
   direction = "to bottom right",
+  className = "",
 }) => {
   // Predefined position shortcuts
   const predefined = {
@@ -28,7 +29,9 @@ const GradientBg = ({
         };
 
   return (
-    <div className={`absolute pointer-events-none ${positionClass}`}>
+    <div
+      className={`absolute pointer-events-none ${positionClass} ${className}`}
+    >
       <div
         className={`rounded-full ${blur}`}
         style={{
