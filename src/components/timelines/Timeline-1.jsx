@@ -50,6 +50,7 @@ const Timeline = ({ items = [] }) => {
             trigger: desc,
             start: "top 85%",
             end: "top 20%",
+            // scrub: true,
           },
         });
 
@@ -81,7 +82,7 @@ const Timeline = ({ items = [] }) => {
           className="border-t-3 border-secondary-gray pt-4 grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
         >
           {/* Left */}
-          <div className="text-4xl font-bold text-gray-900 opacity-80">
+          <div className="text-4xl font-bold text-purple-800 opacity-80">
             {item.year}
             <div className="text-lg text-gray-500">{item.title}</div>
           </div>

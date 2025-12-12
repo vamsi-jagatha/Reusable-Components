@@ -68,7 +68,7 @@ const QuickActionButton = ({
     <div
       ref={containerRef}
       className="
-        fixed z-50
+        fixed z-20
         rounded-full
         overflow-hidden
         bg-white

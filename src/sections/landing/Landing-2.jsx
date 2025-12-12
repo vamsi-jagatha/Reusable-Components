@@ -3,7 +3,7 @@ import Beam from "../../components/sunlight/Beam-1";
 import Button from "../../components/Buttons/Button-3";
 import { ArrowRight } from "lucide-react";
 import Header from "../../components/Headers/Header-2";
-import CounterSection from "../../components/counters/CounterSection-1";
+// import CounterSection from "../../components/counters/CounterSection-1";
 
 const Landing = () => {
   return (
@@ -26,11 +26,11 @@ const Landing = () => {
 
       <Beam className="opacity-70" />
       <div>
-        <h1 className="text-5xl md:text-6xl max-w-6xl  pt-42 font-ragnear font-bold">
+        <h1 className="text-5xl md:text-8xl max-w-6xl  pt-42 font-ragnear font-bold">
           Deploy anything, anywhere
           <div className=" inline-block">—with zero-friction.</div>
         </h1>
-        <p className=" mt-4 text-md max-w-4xl md:text-lg text-gray-700">
+        <p className=" mt-4 mx-auto text-md max-w-4xl md:text-lg text-gray-700">
           Launch apps, storage, and GPU workloads in any cloud with just a few
           clicks. Scale instantly and manage everything through one streamlined,
           unified platform.
@@ -44,7 +44,8 @@ const Landing = () => {
       >
         Get Started for Free
       </Button>
-      <CounterSection
+      {/* <CounterSection
+        className="mt-10 pt-10"
         items={[
           {
             label: "Tasks Completed",
@@ -87,7 +88,7 @@ const Landing = () => {
             duration: 2000,
           },
         ]}
-      />
+      /> */}
     </section>
   );
 };

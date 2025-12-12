@@ -3,10 +3,13 @@ import ShimmerText from "../../components/ShimmerEffect/ShimmerText1";
 import CardsMatrix from "../../components/cards/Cards-1";
 import Button from "../../components/Buttons/Button-2";
 import ScrollMouse from "../../components/scrollMouse/ScrollMouse-1";
+import ScrollToTop from "../../components/scrollToTop/ScrollToTop-1";
 
 const Landing = () => {
   return (
     <>
+      <ScrollToTop />
+
       <section className=" overflow-hidden h-full lg:min-h-screen flex flex-col md:flex-row items-center justify-center text-center">
         <GradientBg
           colors={["#ff00e6", "#0055ff", "#00f0ff"]}

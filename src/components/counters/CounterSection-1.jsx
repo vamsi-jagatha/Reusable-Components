@@ -12,7 +12,7 @@ const CounterSection = ({ items = [] }) => {
       pauseOnHover={false}
       borderLength={10} // % of visible border
       rotation="counterClockwise"
-      className=" mt-20  md:w-7xl md:mt-32 mmd:pt-32   pt-32 pb-12 px-4"
+      className=" mt-20  md:w-7xl md:mt-32 md:pt-32 pt-32 pb-12 px-4"
     >
       <div
         className="
