@@ -61,7 +61,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="max-w-[1440px] mx-auto px-4 py-8 flex flex-col space-y-10 md:px-6 md:py-16 md:min-h-screen">
+    <section className="max-w-[1440px]  mx-auto px-4 py-8 flex flex-col space-y-10 md:px-6 md:py-16 md:min-h-screen">
       <div className="text-center">
         <h1 className="text-3xl max-w-2xl mx-auto md:text-4xl lg:text-5xl   ">
           Efficient and Integrated Deploying Services
