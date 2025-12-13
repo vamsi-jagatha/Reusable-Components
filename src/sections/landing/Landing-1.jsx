@@ -3,7 +3,7 @@ import ShimmerText from "../../components/ShimmerEffect/ShimmerText1";
 import CardsMatrix from "../../components/cards/Cards-1";
 import Button from "../../components/Buttons/Button-2";
 import ScrollMouse from "../../components/scrollMouse/ScrollMouse-1";
-import ScrollToTop from "../../components/scrollToTop/ScrollToTop-1";
+import ScrollToTop from "../../components/ScrollToTop/ScrollToTop-1";
 
 const Landing = () => {
   return (
