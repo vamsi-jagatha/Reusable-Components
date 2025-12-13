@@ -15,12 +15,16 @@ const Landing = () => {
         logoColor="text-purple-500"
         logoHoverColor="hover:text-purple-700"
         logoSize="w-10 h-10"
-        hoverTextColor="hover:text-purple-700"
+        itemHoverColor="text-purple-700"
         animateLogo={true}
         menuItems={[
-          { label: "Home", href: "#home" },
-          { label: "Docs", href: "#docs" },
-          { label: "Components", href: "#components" },
+          { label: "Home", href: "#home", hoverTextColor: "text-purple-600" },
+          { label: "Docs", href: "#docs", hoverTextColor: "text-purple-600" },
+          {
+            label: "Components",
+            href: "#components",
+            hoverTextColor: "text-purple-600",
+          },
         ]}
       />
 
