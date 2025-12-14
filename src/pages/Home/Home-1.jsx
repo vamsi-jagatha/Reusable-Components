@@ -1,7 +1,8 @@
-import Landing from "../sections/landing/Landing-1";
-import Header from "../components/Headers/Header-2";
-import Features from "../sections/features/Features-1";
-import About from "../sections/about/About-1";
+import Landing from "../../sections/landing/Landing-1";
+import Header from "../../components/Headers/Header-2";
+import Features from "../../sections/features/Features-1";
+import About from "../../sections/about/About-1";
+
 const Home = () => {
   return (
     <>
