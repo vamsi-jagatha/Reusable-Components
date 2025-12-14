@@ -28,13 +28,13 @@ const Landing = () => {
         ]}
       />
 
-      <Beam className="opacity-70" />
-      <div>
+      <Beam />
+      <div className="relative z-10 ">
         <h1 className="text-5xl md:text-8xl max-w-6xl  pt-42 font-ragnear font-bold">
           Deploy anything, anywhere
           <div className=" inline-block">—with zero-friction.</div>
         </h1>
-        <p className=" mt-4 mx-auto text-md max-w-4xl md:text-lg text-gray-700">
+        <p className=" mt-4 mx-auto text-md max-w-4xl md:text-lg text-gray-500">
           Launch apps, storage, and GPU workloads in any cloud with just a few
           clicks. Scale instantly and manage everything through one streamlined,
           unified platform.

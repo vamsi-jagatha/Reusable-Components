@@ -1,4 +1,4 @@
-import React from "react";
+import Logo from "../../components/logo/Logo";
 
 const FOOTER_HEIGHT = "70vh";
 
@@ -62,7 +62,7 @@ const Footer = () => {
 
       {/* RIGHT SIDE — SPINNING LOGO (alone, NO SVG) */}
       <div className="absolute right-20  top-50 md:right-20 md:top-10 w-50 md:w-100 h-50 md:h-100 opacity-70">
-        <img className="text-white " src="/svgs/main-logo.svg" alt="Logo" />
+        <Logo />
       </div>
     </footer>
   );
