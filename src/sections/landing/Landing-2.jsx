@@ -39,15 +39,15 @@ const Landing = () => {
           clicks. Scale instantly and manage everything through one streamlined,
           unified platform.
         </p>
+        <Button
+          className="mt-8"
+          icon={<ArrowRight className="w-4 h-4" />}
+          hoverIcon={<ArrowRight className="w-4 h-4" />}
+          rounded="full"
+        >
+          Get Started for Free
+        </Button>
       </div>
-      <Button
-        className="mt-8"
-        icon={<ArrowRight className="w-4 h-4" />}
-        hoverIcon={<ArrowRight className="w-4 h-4" />}
-        rounded="full"
-      >
-        Get Started for Free
-      </Button>
       {/* <CounterSection
         className="mt-10 pt-10"
         items={[
