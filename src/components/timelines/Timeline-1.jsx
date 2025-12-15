@@ -48,7 +48,7 @@ const Timeline = ({ items = [] }) => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: desc,
-            start: "top 85%",
+            start: "top 75%",
             end: "top 20%",
             // scrub: true,
           },
