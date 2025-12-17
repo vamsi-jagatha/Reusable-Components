@@ -4,7 +4,7 @@ import Loader from "../Page-Loaders/Loader-1";
 const Testing = () => {
   return (
     <>
-      <Loader />
+      {/* <Loader /> */}
       <Home />
     </>
   );
