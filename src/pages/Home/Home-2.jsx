@@ -3,6 +3,7 @@ import React from "react";
 import Landing from "../../sections/landing/Landing-2";
 import About from "../../sections/about/About-2";
 import Features from "../../sections/features/Features-2";
+import CTASection from "../../sections/cta/CTASection-1";
 import QuickActionButton from "../../components/quickActionButtons/QuickActionButton-1";
 import Footer from "../../sections/footer/Footer-1";
 import Faq from "../../components/faq/Faq-1";
@@ -43,7 +44,7 @@ const Home = () => {
   ];
 
   return (
-    <>
+    <div className="bg-purple-600">
       <QuickActionButton
         size={80}
         topLabel="Book Call"
@@ -70,11 +71,12 @@ const Home = () => {
           ))}
         </div>
         <Features />
+        <CTASection />
       </div>
       <div style={{ height: "70vh" }}></div>
 
       <Footer />
-    </>
+    </div>
   );
 };
 

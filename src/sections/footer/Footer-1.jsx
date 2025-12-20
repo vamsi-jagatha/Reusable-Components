@@ -1,4 +1,5 @@
 import Logo from "../../components/logo/Logo";
+import SocialStrip from "../../components/SocialStrip/SocialStrip-1";
 
 const FOOTER_HEIGHT = "70vh";
 
@@ -44,7 +45,8 @@ const Footer = () => {
 
         {/* SOCIAL + EMAIL */}
         <div className="flex flex-col md:flex-row gap-10 space-y-3 pt-6">
-          <div className="flex space-x-4">
+          <SocialStrip />
+          {/* <div className="flex space-x-4">
             <div className="h-8 w-8 bg-white/10 rounded-full flex items-center justify-center">
               🌐
             </div>
@@ -54,7 +56,7 @@ const Footer = () => {
             <div className="h-8 w-8 bg-white/10 rounded-full flex items-center justify-center">
               📸
             </div>
-          </div>
+          </div> */}
 
           <p className="text-gray-300 text-lg">contact@example.com</p>
         </div>
