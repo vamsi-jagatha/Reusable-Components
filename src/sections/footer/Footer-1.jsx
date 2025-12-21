@@ -1,9 +1,58 @@
 import Logo from "../../components/logo/Logo";
-import SocialStrip from "../../components/SocialStrip/SocialStrip-1";
+import SocialStrip from "../../components/SocialStrip/SocialStrip-2";
+import { Github, Linkedin, Twitter, Instagram, Mail } from "lucide-react";
 
 const FOOTER_HEIGHT = "70vh";
 
 const Footer = () => {
+  const socials = [
+    {
+      name: "GitHub",
+      icon: Github,
+      url: "https://github.com/your-username",
+      backgroundColor: "#ffffff", // bg-white
+      iconColor: "#7c3aed", // purple-600
+      bgHeight: 32,
+      bgWidth: 32,
+    },
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      url: "https://linkedin.com/in/your-username",
+      backgroundColor: "#ffffff",
+      iconColor: "#7c3aed",
+      bgHeight: 32,
+      bgWidth: 32,
+    },
+    {
+      name: "Twitter",
+      icon: Twitter,
+      url: "https://twitter.com/your-username",
+      backgroundColor: "#ffffff",
+      iconColor: "#7c3aed",
+      bgHeight: 32,
+      bgWidth: 32,
+    },
+    {
+      name: "Instagram",
+      icon: Instagram,
+      url: "https://instagram.com/your-username",
+      backgroundColor: "#ffffff",
+      iconColor: "#7c3aed",
+      bgHeight: 32,
+      bgWidth: 32,
+    },
+    {
+      name: "Email",
+      icon: Mail,
+      url: "mailto:you@example.com",
+      backgroundColor: "#ffffff",
+      iconColor: "#7c3aed",
+      bgHeight: 32,
+      bgWidth: 32,
+    },
+  ];
+
   return (
     <footer
       className="
@@ -45,19 +94,7 @@ const Footer = () => {
 
         {/* SOCIAL + EMAIL */}
         <div className="flex flex-col md:flex-row gap-10 space-y-3 pt-6">
-          <SocialStrip />
-          {/* <div className="flex space-x-4">
-            <div className="h-8 w-8 bg-white/10 rounded-full flex items-center justify-center">
-              🌐
-            </div>
-            <div className="h-8 w-8 bg-white/10 rounded-full flex items-center justify-center">
-              🐦
-            </div>
-            <div className="h-8 w-8 bg-white/10 rounded-full flex items-center justify-center">
-              📸
-            </div>
-          </div> */}
-
+          <SocialStrip socials={socials} />
           <p className="text-gray-300 text-lg">contact@example.com</p>
         </div>
       </div>
