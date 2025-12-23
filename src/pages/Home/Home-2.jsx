@@ -3,6 +3,7 @@ import React from "react";
 import Landing from "../../sections/landing/Landing-2";
 import InfiniteScroll from "../../components/infinite-scroll/InfiniteScroll-1";
 import About from "../../sections/about/About-2";
+import Project from "../../sections/projects/Project-1";
 import Features from "../../sections/features/Features-2";
 import CTASection from "../../sections/cta/CTASection-1";
 import QuickActionButton from "../../components/quickActionButtons/QuickActionButton-1";
@@ -61,6 +62,7 @@ const Home = () => {
           <InfiniteScroll />
         </div>
         <About />
+        <Project />
         <div className="max-w-[1440px] mx-auto px-6 py-16">
           <h2 className="font-ragnear mb-4 md:mb-8 text-3xl md:text-6xl  font-bold ">
             Frequently Asked Questions
