@@ -1,5 +1,5 @@
 import Logo from "../../components/logo/Logo";
-import SocialStrip from "../../components/SocialStrip/SocialStrip-2";
+import SocialStrip from "../../components/socialStrip/SocialStrip-2";
 import { Github, Linkedin, Twitter, Instagram, Mail } from "lucide-react";
 
 const FOOTER_HEIGHT = "70vh";
