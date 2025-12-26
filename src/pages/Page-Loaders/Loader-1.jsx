@@ -4,22 +4,6 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP);
 
-// 🔒 Scroll helpers
-const lockScroll = () => {
-  const scrollbarWidth =
-    window.innerWidth - document.documentElement.clientWidth;
-
-  document.documentElement.style.overflow = "hidden";
-  document.body.style.overflow = "hidden";
-  document.body.style.paddingRight = `${scrollbarWidth}px`;
-};
-
-const unlockScroll = () => {
-  document.documentElement.style.overflow = "";
-  document.body.style.overflow = "";
-  document.body.style.paddingRight = "";
-};
-
 const Loader = ({
   count = 6,
   colors = ["#000"],
@@ -31,36 +15,63 @@ const Loader = ({
   toHeight = "0vh",
   yoyo = false,
 }) => {
-  const containerRef = useRef(null);
+  const overlayRef = useRef(null); // now points to the full overlay section
   const counterRef = useRef(null);
+  const originalStylesRef = useRef({
+    bodyOverflow: "",
+    bodyPaddingRight: "",
+    docOverflow: "",
+  });
 
-  /**
-   * 🔥 THIS IS THE CRITICAL PART
-   * Locks scroll BEFORE the browser paints
-   */
+  /* 🔒 Lock scroll while loader is mounted */
   useLayoutEffect(() => {
-    lockScroll();
-    return () => unlockScroll();
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+
+    // save original styles so we can restore them later
+    originalStylesRef.current = {
+      bodyOverflow: document.body.style.overflow || "",
+      bodyPaddingRight: document.body.style.paddingRight || "",
+      docOverflow: document.documentElement.style.overflow || "",
+    };
+
+    // hide vertical scrollbar on body only; only add padding if there's a scrollbar
+    // hide scroll on html and body to avoid any extra scrollbar showing
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+
+    // make sure the overlay itself doesn't produce its own scrollbar
+    if (overlayRef.current) {
+      overlayRef.current.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.body.style.overflow = originalStylesRef.current.bodyOverflow;
+      document.body.style.paddingRight =
+        originalStylesRef.current.bodyPaddingRight;
+      document.documentElement.style.overflow =
+        originalStylesRef.current.docOverflow;
+    };
   }, []);
 
   useGSAP(
     () => {
-      const boxes = gsap.utils.toArray(".box");
+      // scope .box selection to the overlay so other boxes on the page are unaffected
+      const scopedRoot = overlayRef.current;
+      const boxes = scopedRoot
+        ? gsap.utils.toArray(scopedRoot.querySelectorAll(".box"))
+        : gsap.utils.toArray(".box");
 
-      // Reset visual state
       gsap.set(counterRef.current, { opacity: 1 });
       gsap.set(boxes, { height: fromHeight, opacity: 1 });
 
-      const tl = gsap.timeline({
-        onComplete: () => {
-          // 🔓 Unlock scroll ONLY after loader is fully done
-          unlockScroll();
-        },
-      });
-
-      // 1️⃣ Counter: 1 → 100
       const counter = { value: 1 };
+      const tl = gsap.timeline();
 
+      // Counter animation
       tl.to(counter, {
         value: 100,
         duration: 1.5,
@@ -70,14 +81,14 @@ const Loader = ({
         },
       });
 
-      // 2️⃣ Fade counter
+      // Fade counter
       tl.to(counterRef.current, {
         opacity: 0,
         duration: 0.3,
         ease: "power2.out",
       });
 
-      // 3️⃣ Loader bars animation
+      // Bars animation
       tl.fromTo(
         boxes,
         { height: fromHeight },
@@ -92,25 +103,36 @@ const Loader = ({
         }
       );
 
-      // 4️⃣ Fade bars
+      // Fade bars
       tl.to(boxes, {
         opacity: 0,
         duration: 0.3,
+        onComplete: () => {
+          // hide the full overlay so other page elements are interactive again
+          if (overlayRef.current) {
+            overlayRef.current.style.display = "none";
+            overlayRef.current.style.pointerEvents = "none";
+          }
+          // restore body scroll immediately when loader completes
+          document.body.style.overflow = originalStylesRef.current.bodyOverflow;
+          document.body.style.paddingRight =
+            originalStylesRef.current.bodyPaddingRight;
+          document.documentElement.style.overflow =
+            originalStylesRef.current.docOverflow;
+        },
       });
 
       return () => tl.kill();
     },
-    { scope: containerRef }
+    { scope: overlayRef }
   );
 
-  const resolveColor = (index) => {
-    if (typeof colors === "string") return colors;
-    return colors[index % colors.length];
-  };
+  const resolveColor = (index) =>
+    typeof colors === "string" ? colors : colors[index % colors.length];
 
   return (
-    <section className="fixed inset-0 z-9999 ">
-      <div ref={containerRef} className="relative w-full h-full">
+    <section ref={overlayRef} className="fixed inset-0 z-9999">
+      <div className="relative w-full h-full">
         {/* Loader bars */}
         <div className="absolute inset-0 flex">
           {Array.from({ length: count }).map((_, i) => (
@@ -125,7 +147,7 @@ const Loader = ({
         {/* Counter */}
         <div
           ref={counterRef}
-          className="absolute z-0 bottom-10 right-10 text-6xl font-bold"
+          className="absolute bottom-10 right-10 text-6xl font-bold"
         >
           1%
         </div>

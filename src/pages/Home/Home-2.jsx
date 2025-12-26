@@ -5,6 +5,7 @@ import InfiniteScroll from "../../components/infinite-scroll/InfiniteScroll-1";
 import About from "../../sections/about/About-2";
 import Project from "../../sections/projects/Project-1";
 import Features from "../../sections/features/Features-2";
+import OurTeam from "../../sections/ourteam/OurTeam-1";
 import CTASection from "../../sections/cta/CTASection-1";
 import QuickActionButton from "../../components/quickActionButtons/QuickActionButton-1";
 import Footer from "../../sections/footer/Footer-1";
@@ -77,6 +78,7 @@ const Home = () => {
           ))}
         </div>
         <Features />
+        <OurTeam />
         <CTASection />
       </div>
       <div style={{ height: "70vh" }}></div>
