@@ -34,6 +34,13 @@ const TEAM_MEMBERS = [
     image:
       "https://images.unsplash.com/photo-1614289371518-722f2615943d?q=80&w=1200",
   },
+  {
+    id: 5,
+    name: "Alexa Turner",
+    role: "Backend Engineer",
+    image:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200",
+  },
 ];
 
 const OurTeam = () => {
@@ -56,7 +63,7 @@ const OurTeam = () => {
   });
 
   return (
-    <section className="py-16 overflow-hidden">
+    <section className="py-16">
       {/* Heading */}
       <div className="mb-10 text-center px-4">
         <h2 className="text-3xl sm:text-4xl font-bold">Meet Our Team</h2>
@@ -65,13 +72,22 @@ const OurTeam = () => {
         </p>
       </div>
 
-      {/* Infinite Scroll Wrapper */}
-      <div className="relative overflow-hidden">
+      <div
+        className="relative overflow-hidden"
+        style={{
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, black 20%, black 66%, transparent)",
+          maskImage:
+            "linear-gradient(to right, transparent, black 20%, black 66%, transparent)",
+        }}
+      >
+        {/* TRACK */}
         <div
           ref={trackRef}
           className="flex gap-6 w-max"
           onMouseEnter={() => tweenRef.current?.pause()}
           onMouseLeave={() => tweenRef.current?.resume()}
+          style={{ willChange: "transform" }}
         >
           {[...TEAM_MEMBERS, ...TEAM_MEMBERS].map((member, index) => (
             <TeamCard
