@@ -4,6 +4,7 @@ import Landing from "../../sections/landing/Landing-2";
 import InfiniteScroll from "../../components/infinite-scroll/InfiniteScroll-1";
 import About from "../../sections/about/About-2";
 import Project from "../../sections/projects/Project-1";
+import Pricing from "../../sections/pricing/Pricing-1";
 import Features from "../../sections/features/Features-2";
 import OurTeam from "../../sections/ourteam/OurTeam-1";
 import CTASection from "../../sections/cta/CTASection-1";
@@ -64,7 +65,7 @@ const Home = () => {
         </div>
         <About />
         <Project />
-        <div className="max-w-[1440px] mx-auto px-6 py-16">
+        {/* <div className="max-w-[1440px] mx-auto px-6 py-16">
           <h2 className="font-ragnear mb-4 md:mb-8 text-3xl md:text-6xl  font-bold ">
             Frequently Asked Questions
           </h2>
@@ -76,7 +77,8 @@ const Home = () => {
               answer={faq.answer}
             />
           ))}
-        </div>
+        </div> */}
+        <Pricing />
         <Features />
         <OurTeam />
         <CTASection />
