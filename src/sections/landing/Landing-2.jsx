@@ -18,8 +18,16 @@ const Landing = () => {
         itemHoverColor="text-purple-700"
         animateLogo={true}
         menuItems={[
-          { label: "Home", href: "#home", hoverTextColor: "text-purple-600" },
-          { label: "Docs", href: "#docs", hoverTextColor: "text-purple-600" },
+          {
+            label: "Pricing",
+            href: "/pricing",
+            hoverTextColor: "text-purple-600",
+          },
+          {
+            label: "Support",
+            href: "#docs",
+            hoverTextColor: "text-purple-600",
+          },
           {
             label: "Components",
             href: "#components",

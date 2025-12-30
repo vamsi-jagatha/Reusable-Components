@@ -2,13 +2,17 @@ import React from "react";
 
 const GradientBg = ({
   position = "top-right",
-  size = 350,
+  sizes = {
+    base: 180,
+    sm: 240,
+    md: 300,
+    lg: 350,
+  },
   blur = "blur-3xl",
   colors = ["#3b82f6", "#1d4ed8"],
   direction = "to bottom right",
   className = "",
 }) => {
-  // Predefined position shortcuts
   const predefined = {
     "top-left": "top-0 left-0",
     "top-right": "top-0 right-0",
@@ -31,15 +35,22 @@ const GradientBg = ({
   return (
     <div
       className={`absolute pointer-events-none ${positionClass} ${className}`}
+      style={{
+        "--blob-size": `${sizes.base}px`,
+      }}
     >
       <div
-        className={`rounded-full ${blur}`}
-        style={{
-          width: size,
-          height: size,
-          ...bgStyle,
-        }}
-      ></div>
+        className={`
+          rounded-full
+          ${blur}
+          w-(--blob-size)
+          h-(--blob-size)
+          sm:[--blob-size:${sizes.sm}px]
+          md:[--blob-size:${sizes.md}px]
+          lg:[--blob-size:${sizes.lg}px]
+        `}
+        style={bgStyle}
+      />
     </div>
   );
 };

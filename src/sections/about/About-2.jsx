@@ -28,14 +28,14 @@ const About = () => {
     <section className=" relative max-w-[1440px] mx-auto px-4 py-8 flex flex-col space-y-16 md:px-6 md:py-10 md:min-h-screen">
       <GradientBg
         colors={["#8200DB"]}
-        size={250}
+        sizes={{ base: 160, sm: 220, md: 280, lg: 360 }}
         blur={"blur-3xl"}
-        position="top-12 left-10"
+        position="top-0 md:top-12 left-0 md:left-10"
         className="z-0 opacity-75"
       />
 
       {/* Heading */}
-      <h2 className="text-8xl mt-12">About</h2>
+      <h2 className="text-4xl md:text-8xl mt-12">About</h2>
 
       {/* Typewriter Intro */}
       <Typewriter
