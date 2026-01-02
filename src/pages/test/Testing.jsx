@@ -1,36 +1,23 @@
-import Testimonials from "../../components/testimonials/Testimonials-1";
-const testimonialData = [
-  {
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&h=1200&fit=crop",
-    quote:
-      "This product has completely transformed the way I work and improved my productivity.",
-    name: "Jane Doe",
-    role: "Product Manager",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=800&h=1200&fit=crop",
-    quote:
-      "The experience feels polished and thoughtful. Everything just works the way you expect it to.",
-    name: "Mark Wilson",
-    role: "UX Designer",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&h=1200&fit=crop",
-    quote:
-      "Performance, clarity, and speed. This is one of the rare tools that actually delivers.",
-    name: "Aisha Khan",
-    role: "Tech Lead",
-  },
-];
+import Sidebar from "../../components/sidebars/Sidebar-1";
+import { Home, Users, Settings } from "lucide-react";
+import Timeline from "../../components/timelines/Timeline-2";
 
 const Testing = () => {
   return (
     <>
-      <section className="min-h-screen flex items-center justify-center">
-        <Testimonials testimonials={testimonialData} />
+      <section className="h-full  ">
+        <Timeline
+          theme={{
+            heading: "text-white",
+            intro: "text-gray-300",
+            period: "text-white",
+            role: "text-purple-400",
+            description: "text-gray-400",
+            baseLine: "bg-gray-700",
+            progressLine: "bg-purple-500",
+            sectionBg: "bg-black",
+          }}
+        />
       </section>
     </>
   );
