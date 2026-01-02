@@ -98,3 +98,9 @@ const Sidebar = ({
 };
 
 export default Sidebar;
+
+// const sidebarItems = [
+//   { key: "home", label: "Home", icon: Home },
+//   { key: "users", label: "Users", icon: Users },
+//   { key: "settings", label: "Settings", icon: Settings },
+// ];
