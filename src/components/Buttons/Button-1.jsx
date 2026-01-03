@@ -35,6 +35,7 @@ const Button = ({
     primary: "bg-primary-blue text-white shadow-md hover:bg-secondary-blue",
     outline:
       "border border-primary-white text-tertiary-gray hover:text-primary-dark hover:bg-secondary-white",
+    custom: "",
   };
 
   return (
