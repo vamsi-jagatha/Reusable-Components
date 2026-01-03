@@ -43,7 +43,7 @@ const Sidebar = ({
         background,
         color: textColor,
       }}
-      className="h-screen transition-all duration-300 flex flex-col rounded-r-4xl shadow-lg"
+      className="h-screen fixed left-0 transition-all duration-300 flex flex-col rounded-r-4xl shadow-lg"
     >
       {/* Header */}
       <div className="flex items-center justify-between p-4">
