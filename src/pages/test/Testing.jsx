@@ -1,11 +1,11 @@
 import Sidebar from "../../components/sidebars/Sidebar-1";
 import { Home, Users, Settings } from "lucide-react";
-import CounterItems from "../../components/counters/CounterItems-3";
+import Contact from "../../sections/contact/Contact-1";
 
 const Testing = () => {
   return (
     <>
-      <CounterItems />
+      <Contact />
     </>
   );
 };
